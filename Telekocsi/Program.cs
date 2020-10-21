@@ -127,7 +127,27 @@ namespace Telekocsi
         }
         static void Hatodik()
         {
-
+            StreamWriter fajl = new StreamWriter("utasuzenetek.txt");
+            foreach (var ig in igeny)
+            {
+                int i = 0;
+                while (i < auto.Count &&
+                    !(
+                    ig.Indulas == auto[i].Indulas &&
+                    ig.Cel == auto[i].Cel &&
+                    ig.Szemelyek <= auto[i].Ferohely))
+                {
+                    i++;
+                }
+                if (i < auto.Count)
+                {
+                    Console.WriteLine($"{ig.Azonosito}: Rendszám: {auto[i].Rendszam}, Telefonszám: {auto[i].Telefonszam}");
+                }
+                else
+                {
+                    fajl.WriteLine($"{ig.Azonosito}: Sajnos nem sikerült autót találni");
+                }
+            }
         }
         static void Main(string[] args)
         {

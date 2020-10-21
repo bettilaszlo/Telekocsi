@@ -141,13 +141,14 @@ namespace Telekocsi
                 }
                 if (i < auto.Count)
                 {
-                    Console.WriteLine($"{ig.Azonosito}: Rendszám: {auto[i].Rendszam}, Telefonszám: {auto[i].Telefonszam}");
+                    fajl.WriteLine($"{ig.Azonosito}: Rendszám: {auto[i].Rendszam}, Telefonszám: {auto[i].Telefonszam}");
                 }
                 else
                 {
                     fajl.WriteLine($"{ig.Azonosito}: Sajnos nem sikerült autót találni");
                 }
             }
+            fajl.Close();
         }
         static void Main(string[] args)
         {

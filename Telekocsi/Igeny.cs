@@ -12,13 +12,13 @@ namespace Telekocsi
         public string Indulas { get; private set; }
         public string Cel { get; private set; }
         public int Szemelyek { get; private set; }
-    }
+    
     public Igeny(string azonosito, string indulas, string cel, int szemelyek)
     {
-        this.Azonosito = azonosito;
-        this.Indulas = indulas;
-        this.Cel = cel;
-        this.Szemelyek = szemelyek;
+        Azonosito = azonosito;
+        Indulas = indulas;
+        Cel = cel;
+        Szemelyek = Convert.ToInt32(szemelyek);
     }
-}
+  }
 }

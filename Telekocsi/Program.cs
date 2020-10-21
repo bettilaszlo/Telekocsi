@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -103,7 +104,26 @@ namespace Telekocsi
         }
         static void Otodik()
         {
-
+            Console.WriteLine("5. feladat");
+            //int db = 0;
+            foreach (var ig in igeny)
+            {
+                int i = 0;
+                while (i < auto.Count && 
+                    !(
+                    ig.Indulas == auto[i].Indulas &&  
+                    ig.Cel == auto[i].Cel && 
+                    ig.Szemelyek <= auto[i].Ferohely))
+                {
+                    i++;
+                }
+                if (i < auto.Count)
+                {
+                    Console.WriteLine($"{ig.Azonosito} => {auto[i].Rendszam}");
+                    //db++;
+                }
+            }
+            //Console.WriteLine(db);
         }
         static void Hatodik()
         {
